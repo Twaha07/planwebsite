@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing plans for Websites</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="icon3.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .pricing-table {
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .pricing-table h1 {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .price {
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #007bff;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 20px 0;
+      text-align: left;
+      padding-left: 0;
+    }
+
+    .card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      color: #555;
+    }
+
+    button {
+      background: #007bff;
+      color: black;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .featured {
+      border: 2px solid #007bff;
+      background: #e9f2ff;
+    }
+
+    .payment-methods {
+      display: none;
+      margin-top: 40px;
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideIn 0.5s forwards;
+    }
+
+    .payment-methods h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .payment-methods button {
+      background: #f1f1f1;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      transition: background 0.3s, transform 0.3s;
+      width: 100%;
+      margin-bottom: 20px;
+      background-color: white;
+    }
+
+    .payment-methods button:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    
+    }
+
+    .payment-methods img {
+      height: 35px;
+      width: 35px;
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="pricing-table">
+    <h1>Our Pricing Plans</h1>
+    <div class="cards">
+      <div class="card">
+        <h2><i class="fas fa-box"></i> Basic</h2>
+        <p class="price">₹799<span>/month</span></p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> 1 Website</li>
+          <li><i class="fas fa-hdd"></i> 10 GB Storage</li>
+          <li><i class="fas fa-headset"></i> Email Support</li>
+        </ul>
+        <button onclick="showPaymentMethods('Basic')">Choose Plan</button>
+      </div>
+      <div class="card featured">
+        <h2><i class="fas fa-box-open"></i> Standard</h2>
+        <p class="price">₹1,499<span>/month</span></p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> 5 Websites</li>
+          <li><i class="fas fa-hdd"></i> 50 GB Storage</li>
+          <li><i class="fas fa-headset"></i> Priority Support</li>
+        </ul>
+        <button onclick="showPaymentMethods('Standard')">Choose Plan</button>
+      </div>
+      <div class="card">
+        <h2><i class="fas fa-gem"></i> Premium</h2>
+        <p class="price">₹2,499<span>/month</span></p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+          <li><i class="fas fa-hdd"></i> 200 GB Storage</li>
+          <li><i class="fas fa-headset"></i> 24/7 Support</li>
+        </ul>
+        <button onclick="showPaymentMethods('Premium')">Choose Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Methods Section -->
+  <section class="payment-methods" id="payment-methods">
+    <h2>Choose Your Payment Method</h2>
+    <button onclick="makePayment('UPI')">
+      <i class="fas fa-mobile-alt"></i> UPI
+    </button>
+    <button onclick="makePayment('Google Pay')">
+      <img src="download.jpeg" alt="Google Pay Logo" height="35"> Google Pay
+    </button>
+    <button onclick="makePayment('PhonePe')">
+      <img src="phonepe1.png" alt="PhonePe Logo" height="35"> PhonePe
+    </button>
+    <button onclick="makePayment('Paytm')">
+      <img src="paytm.png" alt="Paytm Logo" height="35"> Paytm
+    </button>
+  </section>
+
+  <script>
+    function showPaymentMethods(plan) {
+      
+      document.querySelector('.pricing-table').style.display = 'none';
+      document.getElementById('payment-methods').style.display = 'block';
+      document.getElementById('payment-methods').style.animation = 'slideIn 0.5s forwards';
+      alert('You have selected the ' + plan + ' plan. Choose your payment method below.');
+    }
+
+    function makePayment(paymentMethod) {
+      alert('You selected ' + paymentMethod + ' as your payment method.');
+      
+    }
+  </script>
+
+</body>
+</html>
